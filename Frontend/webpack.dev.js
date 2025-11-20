@@ -8,7 +8,7 @@ module.exports = merge(common, {
     static: './dist',
     hot: true,
     historyApiFallback: true,
-    port: 3000,
+    port: 3001,
     open: true,
     client: {
       overlay: {

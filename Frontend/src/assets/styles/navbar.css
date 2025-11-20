@@ -1,0 +1,274 @@
+/* filepath: c:\Users\gilan\OneDrive\Dokumen\Kuliah\Coding Camp 2025\Capstone project\coba-lagi\hiplan-frontend\src\assets\styles\navbar.css */
+
+.navbar {
+  background-color: #8fc098;
+  position: var(--navbar-position, fixed);
+  width: 100%;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  font-family: "Poppins", sans-serif;
+}
+
+.navbar-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 2rem;
+  max-width: 1260px;
+  margin: 0 auto;
+  width: 100%;
+}
+
+.nav-brand {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #00381f;
+  text-decoration: none;
+}
+
+.nav-menu {
+  margin-left: auto;
+}
+
+.nav-menu .nav-links {
+  display: flex;
+  align-items: center;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  gap: 2rem;
+}
+
+.nav-menu .nav-links li {
+  display: flex;
+  align-items: center;
+}
+
+.nav-menu .nav-links a {
+  text-decoration: none;
+  color: #1a1a19;
+  font-weight: 500;
+  transition: color 0.3s ease;
+}
+
+.btn {
+  padding: 0.5rem 1rem;
+  border-radius: 4px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-family: inherit;
+}
+
+.btn-masuk {
+  background: none;
+  border: 1px solid #1a1a19;
+  color: #1a1a19;
+  margin-left: auto;
+}
+
+.btn-daftar {
+  background: #1a1a19;
+  border: none;
+  color: rgb(255, 255, 255);
+  margin-left: auto;
+}
+
+.hamburger-menu {
+  display: none;
+}
+
+/* Profile Menu Styles */
+.profile-menu {
+  position: relative;
+}
+
+.profile-btn {
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0.5rem;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background-color 0.3s ease;
+}
+
+.profile-btn:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+.profile-image {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 2px solid #00381f;
+}
+
+.profile-dropdown {
+  position: absolute;
+  top: 100%;
+  right: 0;
+  background: white;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  min-width: 120px;
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(-10px);
+  transition: all 0.3s ease;
+  z-index: 1001;
+}
+
+.profile-dropdown.active {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+
+/* Profile Dropdown Header */
+.dropdown-header {
+  padding: 0.75rem 1rem;
+  font-weight: 600;
+  font-size: 0.9rem;
+  color: #333;
+  border-bottom: 1px solid #e0e0e0;
+  background-color: #f8f9fa;
+  border-radius: 8px 8px 0 0;
+}
+
+/* Dropdown Item with Icon */
+.dropdown-item {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  width: 100%;
+  padding: 0.75rem 1rem;
+  border: none;
+  background: none;
+  text-align: left;
+  cursor: pointer;
+  font-size: 0.9rem;
+  color: #333;
+  transition: background-color 0.2s ease;
+}
+
+.dropdown-icon {
+  font-size: 0.9rem;
+  width: 16px;
+  display: inline-block;
+  text-align: center;
+}
+
+.logout-btn {
+  color: #dc3545;
+}
+
+.logout-btn:hover {
+  background-color: #fff5f5;
+  border-radius: 0 0 8px 8px;
+}
+
+@media screen and (max-width: 768px) {
+  .navbar-container {
+    padding: 0.8rem 1rem;
+  }
+
+  .hamburger-menu {
+    display: block;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 0.5rem;
+    z-index: 1100;
+  }
+
+  .hamburger-line {
+    display: block;
+    width: 24px;
+    height: 2px;
+    margin: 5px 0;
+    background-color: #1a1a19;
+    transition: transform 0.3s ease;
+  }
+
+  .nav-menu {
+    position: fixed;
+    top: 0;
+    left: -100%;
+    width: 280px;
+    height: 100vh;
+    background: #fff;
+    padding: 4rem 1.5rem 2rem;
+    transition: left 0.3s ease;
+    z-index: 1000;
+    box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
+  }
+
+  .nav-menu .nav-links {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1rem;
+  }
+
+  .nav-menu .nav-links li {
+    width: 100%;
+  }
+
+  .nav-menu .nav-links a,
+  .nav-menu .nav-links button {
+    display: block;
+    width: 100%;
+    padding: 0.8rem 0;
+    text-align: center;
+  }
+
+  .btn-masuk,
+  .btn-daftar {
+    margin: 0.5rem 0;
+    width: 100%;
+  }
+
+  .nav-menu.active {
+    left: 0;
+  }
+
+  .hamburger-menu.active .hamburger-line:nth-child(1) {
+    transform: rotate(45deg) translate(5px, 5px);
+  }
+
+  .hamburger-menu.active .hamburger-line:nth-child(2) {
+    opacity: 0;
+  }
+
+  .hamburger-menu.active .hamburger-line:nth-child(3) {
+    transform: rotate(-45deg) translate(5px, -5px);
+  }
+
+  .navbar.menu-active::before {
+    content: "";
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 999;
+  }
+
+  .profile-dropdown {
+    right: -1rem;
+    min-width: 140px;
+  }
+
+  .profile-image {
+    width: 28px;
+    height: 28px;
+  }
+}

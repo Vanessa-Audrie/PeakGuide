@@ -1,0 +1,336 @@
+@media (max-width: 768px) {
+  .side-panel-container #gunung-highlight-card-desktop {
+    display: none;
+  }
+
+  .card {
+    width: 100%;
+    max-width: 100%;
+    margin: 0 auto;
+  }
+
+  .gunung-highlight-card-mobile {
+    position: fixed;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    width: 100vw;
+    max-width: 100vw;
+    min-width: 0;
+    border-radius: 24px 24px 0 0;
+    box-shadow: 0 -4px 24px rgba(0, 0, 0, 0.13);
+    background: #fff;
+    z-index: 1050;
+    min-height: 120px;
+    max-height: 60vh;
+    margin: 0;
+    padding: 18px 12px 12px 12px;
+    overflow-y: auto;
+    display: none;
+    transition: transform 0.3s cubic-bezier(0.4, 2, 0.6, 1);
+  }
+
+  .gunung-highlight-card-mobile.active {
+    display: block;
+  }
+
+  .gunung-highlight-card-mobile .close-highlight-btn {
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    background: transparent;
+    border: none;
+    font-size: 2.2rem;
+    font-weight: 300;
+    line-height: 1;
+    cursor: pointer;
+    color: #999;
+    padding: 5px;
+    z-index: 1051;
+  }
+  .gunung-highlight-card-mobile .close-highlight-btn:hover {
+    color: #555;
+  }
+
+  .highlight-card-content-mobile {
+  }
+
+  .highlight-card-item-mobile {
+    display: flex;
+    gap: 16px;
+    align-items: flex-start;
+  }
+
+  .highlight-img-wrap-mobile {
+    width: 90px;
+    height: 90px;
+    flex-shrink: 0;
+    border-radius: 12px;
+    overflow: hidden;
+    background-color: #f0f0f0;
+  }
+
+  .highlight-img-wrap-mobile img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  .highlight-info-mobile {
+    flex-grow: 1;
+  }
+
+  .highlight-title-mobile {
+    font-weight: 600;
+    font-size: 1.15rem;
+    margin-bottom: 5px;
+    color: #2c3e50;
+    line-height: 1.3;
+    padding-right: 25px;
+  }
+
+  .highlight-sub-mobile {
+    font-size: 0.85rem;
+    color: #7f8c8d;
+    margin-bottom: 8px;
+    line-height: 1.4;
+  }
+
+  .highlight-meta-mobile {
+    font-size: 0.8rem;
+    color: #95a5a6;
+    line-height: 1.4;
+  }
+
+  .highlight-meta-mobile .star-icon-svg {
+    width: 1em;
+    height: 1em;
+    vertical-align: -0.125em;
+    margin-right: 3px;
+    fill: #f39c12;
+  }
+
+  .highlight-actions-mobile {
+    margin-left: auto;
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+  }
+
+  .highlight-actions-mobile .bookmark-btn-mobile {
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 8px;
+    color: #7f8c8d;
+  }
+  .highlight-actions-mobile .bookmark-btn-mobile svg {
+    width: 22px;
+    height: 22px;
+    stroke-width: 1.5;
+  }
+  .highlight-actions-mobile .bookmark-btn-mobile:hover {
+    color: #3498db;
+  }
+  .highlight-actions-mobile .bookmark-btn-mobile.active svg {
+    fill: #3498db;
+    stroke: #3498db;
+  }
+
+  .side-panel-container {
+    display: block !important;
+    position: static !important;
+    width: 100vw;
+    max-width: 100vw;
+    padding: 0;
+    margin: 0;
+    background: none;
+    box-shadow: none;
+  }
+
+  .search-panel {
+    position: fixed;
+    top: 68px;
+    left: 0;
+    right: 0;
+    z-index: 1002;
+    background: #fff;
+    padding: 10px 16px 8px 16px;
+    box-shadow: 0 2px 12px rgba(0, 0, 0, 0.09);
+    border-radius: 0 0 18px 18px;
+    margin: 0;
+    width: 100vw;
+    max-width: 100vw;
+    display: block;
+  }
+
+  .gunung-highlight-card {
+    position: fixed !important;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    width: 100vw;
+    max-width: 100vw;
+    min-width: 0;
+    border-radius: 24px 24px 0 0;
+    box-shadow: 0 -4px 24px rgba(0, 0, 0, 0.13);
+    background: #fff;
+    z-index: 1001;
+    min-height: 180px;
+    max-height: 60vh;
+    margin: 0;
+    padding: 18px 12px 12px 12px;
+    overflow-y: auto;
+    display: block;
+    transition: transform 0.3s cubic-bezier(0.4, 2, 0.6, 1);
+  }
+
+  .custom-map-controls {
+    top: 110px !important;
+    right: 10px !important;
+    z-index: 1000 !important;
+  }
+
+  #gunung-highlight-card {
+    display: none !important;
+  }
+}
+
+/* --- DESKTOP & TABLET --- */
+@media (min-width: 769px) {
+  .gunung-highlight-card-mobile {
+    display: none !important;
+  }
+
+  #gunung-highlight-card {
+    display: flex !important;
+  }
+
+  .side-panel-container {
+    display: flex;
+    flex-direction: row;
+    position: absolute;
+    top: 84px;
+    left: 24px;
+    z-index: 900;
+    gap: 18px;
+    background: none;
+    box-shadow: none;
+    width: auto;
+    max-width: none;
+    height: auto;
+  }
+}
+
+@media (max-width: 768px) {
+  .side-panel-container {
+    flex-direction: column !important;
+    position: static !important;
+    width: 100vw;
+    max-width: 100vw;
+    padding: 0;
+    margin: 0;
+    background: none;
+    box-shadow: none;
+  }
+}
+
+/* --- Feature Section Mobile Responsive Styles --- */
+@media (max-width: 768px) {
+  /* Feature section mobile styles */
+  .feature-section {
+    margin: 2rem auto;
+    padding: 0 1rem;
+  }
+
+  .feature-section h2 {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+    padding: 0 1rem;
+  }
+
+  .feature-container {
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+
+  .feature-image {
+    max-width: 100%;
+    height: 250px;
+  }
+
+  .feature-content {
+    padding: 1.5rem;
+  }
+
+  .feature-content p {
+    font-size: 1rem;
+    margin-bottom: 0.8rem;
+  }
+
+  .feature-icons {
+    flex-direction: row;
+    justify-content: space-around;
+    padding: 1.5rem 0;
+    gap: 0.5rem;
+  }
+
+  .feature-icon {
+    max-width: 90px;
+  }
+
+  .feature-icon img {
+    width: 50px;
+    height: 50px;
+  }
+
+  .feature-icon p {
+    font-size: 0.8rem;
+    margin-bottom: 0;
+  }
+}
+
+@media (max-width: 480px) {
+  .feature-section {
+    margin: 1.5rem auto;
+    padding: 0 0.75rem;
+  }
+
+  .feature-section h2 {
+    font-size: 1.3rem;
+  }
+
+  .feature-container {
+    border-radius: 8px;
+  }
+
+  .feature-image {
+    height: 160px;
+  }
+
+  .feature-image img {
+    height: 160px;
+    border-radius: 8px 8px 0 0;
+  }
+
+  .feature-content {
+    padding: 1rem 0.75rem;
+  }
+
+  .feature-content p {
+    font-size: 0.95rem;
+  }
+
+  .feature-icons {
+    gap: 0.75rem;
+  }
+
+  .feature-icon {
+    max-width: 70px;
+  }
+
+  .feature-icon img {
+    width: 50px;
+    height: 50px;
+  }
+}

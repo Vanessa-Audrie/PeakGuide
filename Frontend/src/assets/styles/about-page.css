@@ -1,0 +1,486 @@
+/* ==================== ABOUT PAGE STYLES ==================== */
+
+/* ==================== VARIABLES ==================== */
+:root {
+  --about-primary-color: #008148;
+  --about-text-primary: #1e3932;
+  --about-text-secondary: #2d3648;
+  --about-text-light: #666;
+  --about-background: #fff;
+  --about-shadow-light: 0 2px 4px rgba(0, 0, 0, 0.1);
+  --about-shadow-medium: 0 4px 8px rgba(0, 0, 0, 0.2);
+  --about-shadow-image: 0 2px 5px rgba(0, 0, 0, 0.1);
+  --about-transition: all 0.3s ease;
+  --about-border-radius: 8px;
+  --about-spacing-xs: 10px;
+  --about-spacing-sm: 15px;
+  --about-spacing-md: 20px;
+  --about-spacing-lg: 30px;
+  --about-spacing-xl: 40px;
+}
+
+/* ==================== SECTION TITLE ==================== */
+.section-title h1 {
+  text-align: center;
+  margin: var(--about-spacing-md) 0;
+  font-size: 2rem;
+  color: var(--about-text-primary);
+  font-weight: 600;
+}
+
+/* ==================== FEATURE CARDS ==================== */
+.AboutView-card-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1rem;
+  margin: 0 auto;
+  padding: 16px;
+  max-width: 1200px;
+}
+
+.AboutView-card {
+  background: var(--about-background);
+  border-radius: var(--about-border-radius);
+  overflow: hidden;
+  box-shadow: var(--about-shadow-light);
+  transition: var(--about-transition);
+  max-height: 330px;
+  text-align: center;
+  border: 1px solid #f0f0f0;
+}
+
+.AboutView-card:hover {
+  transform: translateY(-5px);
+  box-shadow: var(--about-shadow-medium);
+}
+
+.AboutView-card img {
+  width: 50%;
+  padding: 16px;
+  padding-bottom: 0;
+  object-fit: cover;
+  display: inline-block;
+  height: auto;
+}
+
+.AboutView-card-content {
+  padding: 1rem;
+  background: var(--about-background);
+}
+
+
+/* ==================== FITUR UNGGULAN SECTION ==================== */
+.fitur-unggulan-section {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: var(--about-spacing-xl) var(--about-spacing-md);
+}
+
+/* ==================== TENTANG KAMI SECTION ==================== */
+.tentang-kami-section {
+  padding: 60px 20px;
+  background-color: #f5f5f5;
+}
+
+.team-container {
+  display: flex;
+  flex-direction: column;
+  gap: 80px;
+  max-width: 1400px;
+  margin: 40px auto 0;
+  padding: 0 40px;
+}
+
+.team-row {
+  display: flex;
+  justify-content: space-evenly;
+  gap: 60px;
+  flex-wrap: wrap;
+}
+
+.team-member {
+  text-align: center;
+  flex: 0 1 200px;
+  min-width: 200px; 
+}
+
+.member-avatar {
+  width: 150px;
+  height: 150px;
+  margin: 0 auto 20px;
+  border-radius: 50%;
+  overflow: hidden;
+  background-color: #ddd;
+}
+
+.member-avatar img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.team-member h3 {
+  font-size: 1.2rem;
+  margin: 10px 0 5px;
+  font-weight: 600;
+}
+
+.member-role {
+  color: #666;
+  font-size: 0.95rem;
+}
+
+/* ==================== RESPONSIVE DESIGN FOR TEAM SECTION ==================== */
+
+@media screen and (max-width: 768px) {
+  .team-row {
+    flex-direction: column;
+    align-items: center;
+    gap: 30px;
+  }
+
+  .team-row-second {
+    max-width: 100%;
+  }
+
+  .team-member {
+    flex: 1 1 auto;
+    max-width: 300px;
+  }
+
+  .team-member h3 {
+    min-height: auto;
+    font-size: 1.1rem;
+  }
+
+  .member-role {
+    min-height: auto;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .team-container {
+    gap: 30px;
+  }
+
+  .team-row {
+    gap: 25px;
+  }
+
+  .member-avatar {
+    width: 120px;
+    height: 120px;
+  }
+
+  .team-member h3 {
+    font-size: 1rem;
+  }
+
+  .member-role {
+    font-size: 0.9rem;
+  }
+}
+
+
+/* ==================== CONTENT SECTIONS ==================== */
+.AboutView-section {
+  display: flex;
+  align-items: flex-start;
+  margin-bottom: var(--about-spacing-xl);
+  gap: var(--about-spacing-lg);
+  max-width: 1200px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* Content Block */
+.content-block {
+  flex: 2;
+  padding: 1rem;
+}
+
+.content-block h2 {
+  font-size: 1.5rem;
+  color: var(--about-text-primary);
+  margin-bottom: var(--about-spacing-sm);
+  font-weight: 600;
+}
+
+/* Image Block */
+.image-block {
+  display: flex;
+  flex: 1;
+  min-width: 250px;
+  text-align: right;
+  padding: 16px;
+  padding-top: 28px;
+  justify-content: center;
+  align-items: flex-start;
+}
+
+.image-block img {
+  max-width: 100%;
+  height: auto;
+  border-radius: var(--about-border-radius);
+  box-shadow: var(--about-shadow-image);
+  transition: var(--about-transition);
+}
+
+.image-block img:hover {
+  transform: scale(1.02);
+  box-shadow: var(--about-shadow-medium);
+}
+
+/* ==================== TYPOGRAPHY ==================== */
+.AboutView-h2 {
+  text-align: center;
+  margin: var(--about-spacing-xs);
+  color: var(--about-text-primary);
+  font-weight: 600;
+}
+
+.AboutView-h3-center {
+  color: var(--about-text-secondary);
+  text-align: center;
+  padding-bottom: var(--about-spacing-xs);
+  font-weight: 500;
+}
+
+.AboutView-p-left {
+  font-size: 1rem;
+  line-height: 1.7;
+  margin-bottom: var(--about-spacing-sm);
+  text-align: justify;
+  color: var(--about-text-light);
+}
+
+.AboutView-p-center {
+  font-size: 1rem;
+  line-height: 1.7;
+  margin-bottom: var(--about-spacing-sm);
+  text-align: center;
+  color: var(--about-text-light);
+}
+
+/* ==================== SECTION SPACING ==================== */
+#AboutView-section-1 {
+  padding: 0 1rem;
+}
+
+#AboutView-section-2 {
+  padding: 0 1rem;
+  margin-top: var(--about-spacing-lg);
+}
+
+#AboutView-section-3 {
+  padding: 0 1rem;
+  margin-top: var(--about-spacing-lg);
+}
+
+/* ==================== RESPONSIVE DESIGN ==================== */
+
+/* Tablet and Mobile Styles */
+@media screen and (max-width: 768px) {
+  /* Section Layout */
+  .AboutView-section {
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: var(--about-spacing-lg);
+    gap: var(--about-spacing-md);
+    padding: 0 1rem;
+  }
+
+  /* Reverse Section for Mobile */
+  #AboutView-section-reverse {
+    flex-direction: column-reverse;
+  }
+
+  /* Image Block Mobile */
+  .image-block {
+    text-align: center;
+    padding: 16px;
+    min-width: auto;
+    width: 100%;
+  }
+
+  .image-block img {
+    max-width: 80%;
+    height: auto;
+  }
+
+  /* Content Block Mobile */
+  .content-block {
+    max-width: 100%;
+    text-align: left;
+    padding: 0.5rem;
+  }
+
+  .content-block h2 {
+    text-align: center;
+    font-size: 1.3rem;
+  }
+
+  /* Feature Cards Mobile */
+  .AboutView-card-container {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+    padding: 1rem;
+  }
+
+  .AboutView-card {
+    max-height: none;
+  }
+
+  .AboutView-card img {
+    width: 60%;
+    padding: 20px;
+  }
+
+  /* Feature Icon Mobile */
+  .feature-icon img {
+    width: 120px;
+    height: auto;
+    object-fit: contain;
+    margin-bottom: 0.5rem;
+  }
+
+  /* Section Spacing Mobile */
+  #AboutView-section-1,
+  #AboutView-section-2,
+  #AboutView-section-3 {
+    padding: 0;
+    margin-top: var(--about-spacing-md);
+  }
+
+  /* Typography Mobile */
+  .section-title h1 {
+    font-size: 1.7rem;
+  }
+  .AboutView-p-left,
+  .AboutView-p-center {
+    font-size: 0.95rem;
+    line-height: 1.6;
+  }
+  /* Cara Kerja Mobile */
+  .cara-kerja-section {
+    padding: var(--about-spacing-lg) var(--about-spacing-sm);
+  }
+
+  .step-item {
+    flex-direction: column;
+    text-align: center;
+    gap: var(--about-spacing-md);
+    max-width: 90%;
+  }
+
+  /* Mobile staircase effect - reduced margin */
+  .step-item:nth-child(1) {
+    margin-left: 0;
+  }
+
+  .step-item:nth-child(2) {
+    margin-left: 5%;
+  }
+
+  .step-item:nth-child(3) {
+    margin-left: 10%;
+  }
+
+  .step-icon {
+    width: 70px;
+    height: 70px;
+    margin: 0 auto;
+  }
+
+  .step-icon img {
+    width: 40px;
+    height: 40px;
+  }
+
+  .step-content h3 {
+    font-size: 1.2rem;
+  }
+
+  .step-content p {
+    font-size: 0.95rem;
+  }
+}
+
+/* Small Mobile Styles */
+@media screen and (max-width: 480px) {
+  /* Section Layout */
+  .AboutView-section {
+    gap: var(--about-spacing-sm);
+  }
+
+  /* Content adjustments */
+  .content-block {
+    padding: 0.25rem;
+  }
+
+  .content-block h2 {
+    font-size: 1.2rem;
+  }
+
+  /* Card adjustments */
+  .AboutView-card-container {
+    padding: 0.5rem;
+  }
+
+  .AboutView-card img {
+    width: 70%;
+    padding: 15px;
+  }
+
+  /* Typography adjustments */
+  .section-title h1 {
+    font-size: 1.5rem;
+    margin: var(--about-spacing-sm) 0;
+  }
+  .AboutView-p-left,
+  .AboutView-p-center {
+    font-size: 0.9rem;
+    margin-bottom: var(--about-spacing-xs);
+  }
+  /* Cara Kerja Small Mobile */
+  .cara-kerja-section {
+    padding: var(--about-spacing-md) var(--about-spacing-xs);
+  }
+
+  .step-item {
+    gap: var(--about-spacing-sm);
+    padding: var(--about-spacing-sm);
+    max-width: 95%;
+  }
+
+  /* Small mobile staircase effect - minimal margin */
+  .step-item:nth-child(1) {
+    margin-left: 0;
+  }
+
+  .step-item:nth-child(2) {
+    margin-left: 2%;
+  }
+
+  .step-item:nth-child(3) {
+    margin-left: 4%;
+  }
+
+  .step-icon {
+    width: 60px;
+    height: 60px;
+  }
+
+  .step-icon img {
+    width: 35px;
+    height: 35px;
+  }
+
+  .step-content h3 {
+    font-size: 1.1rem;
+  }
+
+  .step-content p {
+    font-size: 0.9rem;
+  }
+}

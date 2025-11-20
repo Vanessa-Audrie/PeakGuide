@@ -1,0 +1,200 @@
+/*******************************
+* BASE STYLES
+*******************************/
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+  min-height: 100vh;
+  background-color: #f5f5f5;
+}
+
+h2 {
+  font-size: 1.3rem;
+  color: #1e3932;
+}
+
+/*******************************
+* LAYOUT
+*******************************/
+#app {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+/*******************************
+* BUTTON STYLES - NAVBAR SPECIFIC
+*******************************/
+
+.btn-masuk {
+  background: none;
+  border: 1px solid #1a1a19;
+  color: #1a1a19;
+  margin-left: 1rem;
+}
+
+.btn-daftar {
+  background: #1a1a19;
+  border: none;
+  color: rgb(255, 255, 255);
+  margin-left: 1rem;
+}
+
+.login-btn,
+.register-btn {
+  width: 100%;
+  padding: 0.75rem;
+  background: #1a1a19;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  font-size: 1rem;
+  font-weight: 500;
+  cursor: pointer;
+  margin-bottom: 1rem;
+}
+
+.login-btn:hover,
+.register-btn:hover {
+  background: #333;
+}
+
+/*******************************
+* CARD STYLES - SPECIFIC LAYOUTS
+*******************************/
+
+.mountain-section {
+  padding: 4rem 2rem;
+}
+
+.mountain-section h2 {
+  color: #2d3648;
+  margin-bottom: 2rem;
+  font-size: 1.8rem;
+}
+
+.card {
+  padding: 12px;
+}
+
+.card img {
+  height: auto;
+}
+
+.card-link {
+  display: block;
+  text-decoration: none;
+  color: inherit;
+  height: 100%;
+}
+
+/*******************************
+* SECTION STYLES - OVERRIDES
+*******************************/
+
+.mulai-jelajah-section,
+.destinasi-populer-section {
+  padding: 4rem 0 1rem;
+}
+
+.mulai-jelajah-section h2,
+.destinasi-populer-section h2 {
+  margin-bottom: 0;
+}
+
+/*******************************
+* FORM STYLES - LAYOUT ONLY
+*******************************/
+
+.login-container,
+.register-container {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  min-height: 100vh;
+  padding-top: 100px;
+  background-color: #f5f5f5;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+/*******************************
+* FEATURE SECTION - ADDITIONAL STYLES
+*******************************/
+
+.feature-content p {
+  line-height: 1.6;
+  margin-bottom: 1rem;
+  font-size: 1.1rem;
+  text-align: justify;
+}
+
+.feature-icons {
+  display: flex;
+  justify-content: space-between;
+  padding: 2rem 0 1rem;
+  gap: 1.5rem;
+}
+
+.feature-icon {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+  flex: 1;
+  max-width: 120px;
+}
+
+.feature-icon img {
+  width: 100px;
+  height: 100px;
+  object-fit: contain;
+  margin-bottom: 0.5rem;
+}
+
+/*******************************
+* RESPONSIVE STYLES
+*******************************/
+
+/* Small Mobile */
+@media screen and (max-width: 480px) {
+  .feature-section {
+    margin: 1.5rem auto;
+  }
+
+  .feature-image {
+    height: 200px;
+  }
+
+  .feature-content {
+    padding: 1rem;
+  }
+
+  .feature-section h2 {
+    font-size: 1.3rem;
+  }
+}
+
+/* Desktop */
+@media screen and (min-width: 769px) {
+  .navbar-container {
+    padding: 1rem 2rem;
+  }
+
+  .drawer-menu {
+    display: flex;
+    align-items: center;
+    position: static;
+    height: auto;
+    width: auto;
+    padding: 0;
+    background: none;
+    box-shadow: none;
+  }
+
+  .nav-links {
+    margin: 0 2rem 0 auto;
+  }
+}

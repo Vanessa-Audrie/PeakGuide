@@ -1,0 +1,134 @@
+/* Footer Component Styles */
+footer-component {
+  display: block;
+  background-color: #2c2c2c;
+  color: #f8f9fa;
+  padding: 3rem 0 2rem 0;
+}
+
+footer-component .container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+footer-component .main-footer-content {
+  display: flex;
+  align-items: center;
+  margin-bottom: 1rem;
+  flex-wrap: wrap;
+  gap: 2rem;
+}
+
+footer-component .footer-brand {
+  text-align: left;
+}
+
+footer-component .footer-brand-name {
+  font-weight: bold;
+  font-size: 2.5rem;
+  margin-bottom: 0.5rem;
+  color: #fff;
+  line-height: 1.2;
+}
+
+footer-component .footer-brand-subtitle {
+  color: #adb5bd;
+  font-size: 1rem;
+  margin: 0;
+}
+
+footer-component .list-unstyled {
+  list-style: none;
+  padding-left: 0;
+  margin: 0;
+}
+
+footer-component .list-unstyled li {
+  margin-bottom: 0.8rem;
+}
+
+footer-component .footer-link {
+  color: #adb5bd;
+  text-decoration: none;
+  font-size: 0.95rem;
+  transition: color 0.2s;
+  line-height: 1.4;
+}
+
+footer-component .footer-link:hover {
+  color: #fff;
+}
+
+footer-component .footer-divider {
+  border: none;
+  border-top: 1px solid rgba(255, 255, 255, 0.15);
+  margin: 0 0 2rem 0;
+}
+
+footer-component .footer-bottom {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+footer-component .footer-social-icons {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+footer-component .footer-social-link {
+  color: #adb5bd;
+  font-size: 1.3rem;
+  transition: color 0.2s;
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+footer-component .footer-social-link:hover {
+  color: #fff;
+}
+
+footer-component .footer-copyright {
+  color: #adb5bd;
+  font-size: 0.9rem;
+  margin: 0;
+}
+
+/* Media Queries */
+@media screen and (max-width: 768px) {
+  footer-component .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 1rem;
+  }
+
+  footer-component .main-footer-content {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  footer-component .footer-brand {
+    max-width: 100%;
+    margin-bottom: 2rem;
+  }
+
+  footer-component .footer-bottom {
+    flex-direction: column;
+    text-align: center;
+    gap: 1.5rem;
+  }
+
+  footer-component .footer-social-icons {
+    justify-content: center;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  footer-component .footer-brand-name {
+    font-size: 2rem;
+  }
+}
