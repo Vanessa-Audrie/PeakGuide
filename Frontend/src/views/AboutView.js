@@ -63,7 +63,7 @@ export class AboutView {
                     
                     <section class="fitur-unggulan-section">
                     <div class="section-title">
-                        <h1>FITUR UNGGULAN HIPLAN</h1>
+                        <h1>FITUR UNGGULAN</h1>
                     </div>
                     
                     <div class="AboutView-card-container">
@@ -126,7 +126,7 @@ export class AboutView {
 
                             <div class="team-member">
                                 <div class="member-avatar">
-                                    <img src="${require("../assets/images/team/member1.png")}" alt="Team Member 2">
+                                    <img src="${require("../assets/images/team/member2.jpg")}" alt="Team Member 2">
                                 </div>
                                 <h3>Fathya Azra Nazmira</h3>
                                 <p class="member-role">Back End Developer</p>
@@ -134,7 +134,7 @@ export class AboutView {
 
                             <div class="team-member">
                                 <div class="member-avatar">
-                                    <img src="${require("../assets/images/team/member1.png")}" alt="Team Member 3">
+                                    <img src="${require("../assets/images/team/member3.png")}" alt="Team Member 3">
                                 </div>
                                 <h3>Faiza Adinda Fakhira Batubara</h3>
                                 <p class="member-role">Documentation</p>
@@ -144,7 +144,7 @@ export class AboutView {
                         <div class="team-row team-row-second">
                             <div class="team-member">
                                 <div class="member-avatar">
-                                    <img src="${require("../assets/images/team/member1.png")}" alt="Team Member 4">
+                                    <img src="${require("../assets/images/team/member4.JPG")}" alt="Team Member 4">
                                 </div>
                                 <h3>Nur Adilah</h3>
                                 <p class="member-role">Maintenance</p>
@@ -152,7 +152,7 @@ export class AboutView {
 
                             <div class="team-member">
                                 <div class="member-avatar">
-                                    <img src="${require("../assets/images/team/member1.png")}" alt="Team Member 5">
+                                    <img src="${require("../assets/images/team/member5.png")}" alt="Team Member 5">
                                 </div>
                                 <h3>Aini Maharani</h3>
                                 <p class="member-role">Quality Assurance</p>
