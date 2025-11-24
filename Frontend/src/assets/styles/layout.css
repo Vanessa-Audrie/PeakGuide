@@ -1,0 +1,359 @@
+/* Layout utama aplikasi */
+#app {
+  width: 100%;
+  min-height: 100vh;
+}
+
+.map-page-full-container {
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  padding-top: 60px;
+  position: relative;
+  box-sizing: border-box;
+}
+
+.map-page-full-container .map-page-title {
+  color: #00381f;
+  margin: 0.5rem 1rem 1rem 1rem;
+  font-size: 1.8rem;
+  font-weight: 600;
+  text-align: center;
+  flex-shrink: 0;
+}
+
+.explore-container {
+  padding: 80px 2rem 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  min-height: calc(100vh - 160px);
+}
+
+.explore-container h2 {
+  color: #00381f;
+  margin-bottom: 1.5rem;
+  font-size: 1.8rem;
+  font-weight: 600;
+  flex-shrink: 0;
+}
+
+.login-container,
+.register-container {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  min-height: 100vh;
+  padding-top: 100px;
+  background-color: #f5f5f5;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+/* Recommendation Section */
+.rekomendasi-section {
+  max-width: 1260px;
+  margin: 4rem auto;
+  padding: 0 2rem;
+  text-align: left;
+}
+
+.rekomendasi-section h2 {
+  color: #00381f;
+  font-size: 2rem;
+  font-weight: 600;
+  margin-bottom: 1.5rem;
+}
+
+.rekomendasi-description {
+  color: #666;
+  font-size: 1.1rem;
+  margin-bottom: 2rem;
+  text-align: left;
+}
+
+.rekomendasi-container {
+  width: 100%;
+}
+
+.rekomendasi-form {
+  background: white;
+  padding: 2.5rem;
+  border-radius: 12px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  border: 1px solid rgba(0, 56, 31, 0.1);
+}
+
+.input-group {
+  display: flex;
+  gap: 2rem;
+  margin-bottom: 2rem;
+  flex-wrap: wrap;
+}
+
+.input-field {
+  flex: 1;
+  min-width: 250px;
+  text-align: left;
+}
+
+.input-field label {
+  display: block;
+  color: #00381f;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+  font-size: 1rem;
+}
+
+.input-field select {
+  width: 100%;
+  padding: 12px 16px;
+  border: 2px solid #e1e8e4;
+  border-radius: 8px;
+  font-size: 1rem;
+  background: white;
+  color: #333;
+  transition: all 0.3s ease;
+  appearance: none;
+  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 20 20'%3e%3cpath stroke='%236b7280' stroke-linecap='round' stroke-linejoin='round' stroke-width='1.5' d='m6 8 4 4 4-4'/%3e%3c/svg%3e");
+  background-position: right 12px center;
+  background-repeat: no-repeat;
+  background-size: 16px;
+  padding-right: 40px;
+}
+
+.input-field input[type="text"] {
+  width: 100%;
+  padding: 12px 16px;
+  border: 2px solid #e1e8e4;
+  border-radius: 8px;
+  font-size: 1rem;
+  background: white;
+  color: #333;
+  transition: all 0.3s ease;
+}
+
+.input-field input[type="text"]:focus,
+.input-field select:focus {
+  outline: none;
+  border-color: #00381f;
+  box-shadow: 0 0 0 3px rgba(0, 56, 31, 0.1);
+}
+
+.input-field input[type="text"]::placeholder {
+  color: #999;
+  opacity: 1;
+}
+
+/* Input number styling for ketinggian field */
+.input-field input[type="number"] {
+  width: 100%;
+  padding: 12px 16px;
+  border: 2px solid #e1e8e4;
+  border-radius: 8px;
+  font-size: 1rem;
+  background: white;
+  color: #333;
+  transition: all 0.3s ease;
+}
+
+.input-field input[type="number"]:focus {
+  outline: none;
+  border-color: #00381f;
+  box-shadow: 0 0 0 3px rgba(0, 56, 31, 0.1);
+}
+
+.input-field input[type="number"]::placeholder {
+  color: #999;
+  opacity: 1;
+}
+
+/* Remove spinner arrows for better UX */
+.input-field input[type="number"]::-webkit-outer-spin-button,
+.input-field input[type="number"]::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+.input-field input[type="number"] {
+  -moz-appearance: textfield;
+}
+
+/* Help text styling */
+.input-help {
+  display: block;
+  margin-top: 0.5rem;
+  font-size: 0.85rem;
+  color: #666;
+  font-style: italic;
+  line-height: 1.4;
+}
+
+.rekomendasi-btn {
+  background: linear-gradient(135deg, #00381f 0%, #004d2a 100%);
+  color: white;
+  border: none;
+  padding: 12px 60px;
+  font-size: 1.1rem;
+  font-weight: 600;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  box-shadow: 0 4px 12px rgba(0, 56, 31, 0.2);
+}
+
+.rekomendasi-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(0, 56, 31, 0.3);
+}
+
+.rekomendasi-btn:active {
+  transform: translateY(0);
+}
+
+.btn-icon {
+  width: 18px;
+  height: 18px;
+  filter: brightness(0) invert(1);
+}
+
+/* Recommendation Results Section */
+.rekomendasi-results-section {
+  max-width: 1260px;
+  margin: 4rem auto;
+  padding: 0 2rem;
+  text-align: left;
+}
+
+.rekomendasi-results-container {
+  width: 100%;
+}
+
+/* Fix asymmetrical layout for recommendation cards */
+.rekomendasi-results-section .card-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+  justify-content: center;
+  justify-items: center;
+}
+
+/* Ensure recommendation cards don't stretch too wide when few cards */
+.rekomendasi-results-section .card-container .card {
+  width: 100%;
+  max-width: 300px;
+  margin: 0 auto;
+}
+
+/* Center cards when there are 2-3 cards instead of 4 */
+@media (min-width: 768px) {
+  .rekomendasi-results-section .card-container {
+    grid-template-columns: repeat(auto-fit, minmax(280px, 300px));
+    justify-content: center;
+  }
+}
+
+@media (min-width: 1024px) {
+  .rekomendasi-results-section .card-container {
+    grid-template-columns: repeat(auto-fit, minmax(280px, 300px));
+    max-width: 1200px;
+    justify-content: center;
+  }
+}
+
+.results-header {
+  text-align: center;
+  margin-bottom: 3rem;
+}
+
+.results-header h2 {
+  color: #00381f;
+  font-size: 2rem;
+  font-weight: 600;
+  margin-bottom: 1rem;
+}
+
+.results-header p {
+  color: #666;
+  font-size: 1.1rem;
+  margin: 0;
+}
+
+.results-actions {
+  text-align: center;
+  margin-top: 3rem;
+}
+
+.back-to-home-btn {
+  background: #6c757d;
+  color: white;
+  border: none;
+  padding: 12px 24px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 1rem;
+  font-weight: 500;
+  transition: all 0.3s ease;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.back-to-home-btn:hover {
+  background: #5a6268;
+  transform: translateY(-1px);
+}
+
+.back-to-home-btn i {
+  font-size: 1rem;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .rekomendasi-section {
+    padding: 0 1rem;
+    margin: 2rem auto;
+  }
+
+  .rekomendasi-form {
+    padding: 2rem 1.5rem;
+  }
+
+  .input-group {
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+
+  .input-field {
+    min-width: 100%;
+  }
+
+  .rekomendasi-section h2 {
+    font-size: 1.8rem;
+  }
+
+  .rekomendasi-description {
+    font-size: 1rem;
+    margin-bottom: 2rem;
+  }
+
+  .rekomendasi-results-section {
+    margin: 2rem auto;
+    padding: 0 1rem;
+  }
+
+  .results-header h2 {
+    font-size: 1.5rem;
+  }
+
+  .results-header p {
+    font-size: 1rem;
+  }
+}
