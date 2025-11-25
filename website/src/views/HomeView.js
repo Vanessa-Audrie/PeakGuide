@@ -336,6 +336,9 @@ export class HomeView {
     } else {
       searchSection.innerHTML = `
         <h2>Hasil Pencarian</h2>
+        <p class="category-count" style="color: #1a1a19; font-size: 1rem; margin: -1rem auto 2rem; max-width: 1200px; opacity: 0.8;">
+          0 gunung ditemukan
+        </p>
         <div style="text-align: center; padding: 40px; color: #666;">
           <p>Tidak ada gunung yang ditemukan untuk pencarian ini.</p>
         </div>

@@ -33,35 +33,32 @@ export class ExploreView {
       </section>
 
       <main>
-        <!-- High Mountains (>3000 mdpl) -->
-        <section class="mountains-category-section" id="high-mountains-section" aria-labelledby="high-mountains-heading">
+        <section class="mountains-category-section" id="high-mountains-section">
           <div class="category-header">
-            <h2 id="high-mountains-heading">Gunung Tinggi (>3000 mdpl)</h2>
+            <h2>Gunung Tinggi (>3000 mdpl)</h2>
             <p class="category-count">${highMountains.length} gunung tersedia</p>
           </div>
-          <div class="card-container" id="high-mountains-container">
+          <div class="card-container">
             ${this.renderMountainCards(highMountains)}
           </div>
         </section>
 
-        <!-- Medium Mountains (2000-3000 mdpl) -->
-        <section class="mountains-category-section" id="medium-mountains-section" aria-labelledby="medium-mountains-heading">
+        <section class="mountains-category-section" id="medium-mountains-section">
           <div class="category-header">
-            <h2 id="medium-mountains-heading">Gunung Menengah (2000-3000 mdpl)</h2>
+            <h2>Gunung Menengah (2000-3000 mdpl)</h2>
             <p class="category-count">${mediumMountains.length} gunung tersedia</p>
           </div>
-          <div class="card-container" id="medium-mountains-container">
+          <div class="card-container">
             ${this.renderMountainCards(mediumMountains)}
           </div>
         </section>
 
-        <!-- Low Mountains (<2000 mdpl) -->
-        <section class="mountains-category-section" id="low-mountains-section" aria-labelledby="low-mountains-heading">
+        <section class="mountains-category-section" id="low-mountains-section">
           <div class="category-header">
-            <h2 id="low-mountains-heading">Gunung Rendah (<2000 mdpl)</h2>
+            <h2>Gunung Rendah (<2000 mdpl)</h2>
             <p class="category-count">${lowMountains.length} gunung tersedia</p>
           </div>
-          <div class="card-container" id="low-mountains-container">
+          <div class="card-container">
             ${this.renderMountainCards(lowMountains)}
           </div>
         </section>
@@ -136,9 +133,7 @@ export class ExploreView {
     const suggestionsContainer = document.getElementById("search-suggestions");
     const suggestionsList = document.getElementById("suggestions-list");
 
-    if (!searchInput || !suggestionsContainer || !suggestionsList) {
-      return;
-    }
+    if (!searchInput || !suggestionsContainer || !suggestionsList) return;
 
     let currentFocus = -1;
     
@@ -148,9 +143,7 @@ export class ExploreView {
 
       if (query.length < 2) {
         this.hideSuggestions();
-        if (query.length === 0) {
-          this.showDefaultContent();
-        }
+        if (query.length === 0) this.showDefaultContent();
         return;
       }
 
@@ -182,22 +175,16 @@ export class ExploreView {
         currentFocus = Math.max(currentFocus - 1, -1);
         this.setActiveSuggestion(currentFocus);
       } else if (e.key === "Enter") {
+        e.preventDefault();
         const query = searchInput.value.trim();
         
         if (currentFocus >= 0 && items[currentFocus]) {
-          e.preventDefault();
           items[currentFocus].click();
-        } 
-
-        else if (query.length >= 2) {
-          e.preventDefault();
+        } else if (query.length >= 2) {
           const searchResults = this.getSuggestions(query);
           this.showSearchResults(searchResults);
           this.hideSuggestions();
-        }
-
-        else if (query.length === 0) {
-          e.preventDefault();
+        } else if (query.length === 0) {
           this.showDefaultContent();
         }
       } else if (e.key === "Escape") {
@@ -213,11 +200,8 @@ export class ExploreView {
     });
   }
 
-
   getSuggestions(query) {
-    if (!this.allMountains || !Array.isArray(this.allMountains)) {
-      return [];
-    }
+    if (!this.allMountains || !Array.isArray(this.allMountains)) return [];
 
     const searchTerm = query.toLowerCase();
     return this.allMountains
@@ -247,19 +231,19 @@ export class ExploreView {
     suggestionsList.innerHTML = suggestions
       .map(
         (suggestion) => `
-      <li class="suggestion-item" data-mountain-id="${suggestion.id}">
-        <div class="suggestion-icon">
-          <i class="bi bi-geo-alt"></i>
-        </div>
-        <div class="suggestion-content">
-          <div class="suggestion-name">${this.highlightMatch(
-            suggestion.name,
-            document.getElementById("searchInput").value
-          )}</div>
-          <div class="suggestion-details">${suggestion.location} • ${suggestion.altitude} mdpl</div>
-        </div>
-      </li>
-    `
+          <li class="suggestion-item" data-mountain-id="${suggestion.id}">
+            <div class="suggestion-icon">
+              <i class="bi bi-geo-alt"></i>
+            </div>
+            <div class="suggestion-content">
+              <div class="suggestion-name">${this.highlightMatch(
+                suggestion.name,
+                document.getElementById("searchInput").value
+              )}</div>
+              <div class="suggestion-details">${suggestion.location} • ${suggestion.altitude} mdpl</div>
+            </div>
+          </li>
+        `
       )
       .join("");
 
@@ -299,9 +283,7 @@ export class ExploreView {
     this.hideSuggestions();
 
     const searchInput = document.getElementById("searchInput");
-    if (searchInput) {
-      searchInput.value = "";
-    }
+    if (searchInput) searchInput.value = "";
   }
 
   showSearchResults(searchResults) {
@@ -311,6 +293,14 @@ export class ExploreView {
     const mainElement = document.querySelector("main");
     
     if (searchResults.length > 0) {
+      const mountainsForCards = searchResults.map(result => ({
+        id: result.id,
+        name: result.name,
+        location: result.location,
+        altitude: result.altitude,
+        mainImage: this.findMountainImage(result.id),
+      }));
+
       mainElement.innerHTML = `
         <section class="mountains-category-section" style="display: block;">
           <div class="category-header">
@@ -318,20 +308,18 @@ export class ExploreView {
             <p class="category-count">${searchResults.length} gunung ditemukan</p>
           </div>
           <div class="card-container">
-            ${this.renderMountainCards(searchResults.map(result => ({
-              id: result.id,
-              name: result.name,
-              location: result.location,
-              altitude: result.altitude,
-              mainImage: this.findMountainImage(result.id),
-            })))}
+            ${this.renderMountainCards(mountainsForCards)}
           </div>
         </section>
       `;
     } else {
       mainElement.innerHTML = `
         <section class="mountains-category-section" style="display: block;">
-          <div class="no-mountains-message" style="padding: 4rem 2rem;">
+          <div class="category-header">
+            <h2>Hasil Pencarian</h2>
+            <p class="category-count">0 gunung ditemukan</p>
+          </div>
+          <div class="no-mountains-message">
             <p>Tidak ada gunung yang ditemukan untuk pencarian ini.</p>
           </div>
         </section>
@@ -347,7 +335,7 @@ export class ExploreView {
 
       const mainElement = document.querySelector("main");
       mainElement.innerHTML = `
-        <section class="mountains-category-section" id="high-mountains-section">
+        <section class="mountains-category-section">
           <div class="category-header">
             <h2>Gunung Tinggi (>3000 mdpl)</h2>
             <p class="category-count">${highMountains.length} gunung tersedia</p>
@@ -357,7 +345,7 @@ export class ExploreView {
           </div>
         </section>
 
-        <section class="mountains-category-section" id="medium-mountains-section">
+        <section class="mountains-category-section">
           <div class="category-header">
             <h2>Gunung Menengah (2000-3000 mdpl)</h2>
             <p class="category-count">${mediumMountains.length} gunung tersedia</p>
@@ -367,7 +355,7 @@ export class ExploreView {
           </div>
         </section>
 
-        <section class="mountains-category-section" id="low-mountains-section">
+        <section class="mountains-category-section">
           <div class="category-header">
             <h2>Gunung Rendah (<2000 mdpl)</h2>
             <p class="category-count">${lowMountains.length} gunung tersedia</p>

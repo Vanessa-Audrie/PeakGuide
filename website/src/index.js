@@ -23,6 +23,8 @@ document.addEventListener("DOMContentLoaded", () => {
   async function handleRoute() {
     const hash = window.location.hash;
 
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+
     await pageTransition.transition(() => {
       if (hash.startsWith("#/mountain/")) {
         const mountainId = hash.split("/")[2];
