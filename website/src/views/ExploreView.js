@@ -35,7 +35,7 @@ export class ExploreView {
       <main>
         <section class="mountains-category-section" id="high-mountains-section">
           <div class="category-header">
-            <h2>Gunung Tinggi (>3000 mdpl)</h2>
+            <h2>Gunung >3000 mdpl</h2>
             <p class="category-count">${highMountains.length} gunung tersedia</p>
           </div>
           <div class="card-container">
@@ -45,7 +45,7 @@ export class ExploreView {
 
         <section class="mountains-category-section" id="medium-mountains-section">
           <div class="category-header">
-            <h2>Gunung Menengah (2000-3000 mdpl)</h2>
+            <h2>Gunung 2000-3000 mdpl</h2>
             <p class="category-count">${mediumMountains.length} gunung tersedia</p>
           </div>
           <div class="card-container">
@@ -55,7 +55,7 @@ export class ExploreView {
 
         <section class="mountains-category-section" id="low-mountains-section">
           <div class="category-header">
-            <h2>Gunung Rendah (<2000 mdpl)</h2>
+            <h2>Gunung <2000 mdpl</h2>
             <p class="category-count">${lowMountains.length} gunung tersedia</p>
           </div>
           <div class="card-container">
@@ -337,7 +337,7 @@ export class ExploreView {
       mainElement.innerHTML = `
         <section class="mountains-category-section">
           <div class="category-header">
-            <h2>Gunung Tinggi (>3000 mdpl)</h2>
+            <h2>Gunung >3000 mdpl</h2>
             <p class="category-count">${highMountains.length} gunung tersedia</p>
           </div>
           <div class="card-container">
@@ -347,7 +347,7 @@ export class ExploreView {
 
         <section class="mountains-category-section">
           <div class="category-header">
-            <h2>Gunung Menengah (2000-3000 mdpl)</h2>
+            <h2>Gunung 2000-3000 mdpl</h2>
             <p class="category-count">${mediumMountains.length} gunung tersedia</p>
           </div>
           <div class="card-container">
@@ -357,7 +357,7 @@ export class ExploreView {
 
         <section class="mountains-category-section">
           <div class="category-header">
-            <h2>Gunung Rendah (<2000 mdpl)</h2>
+            <h2>Gunung <2000 mdpl</h2>
             <p class="category-count">${lowMountains.length} gunung tersedia</p>
           </div>
           <div class="card-container">
