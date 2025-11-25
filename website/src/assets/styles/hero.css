@@ -39,7 +39,7 @@
   max-width: 600px;
   margin: 0 auto;
   background: rgb(255, 255, 255);
-  border-radius: 8px;
+  border-radius: 50px;
   overflow: hidden;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
   border: 1px solid #1a1a19;
@@ -71,7 +71,6 @@
   border: none;
   padding: 0.5rem 1rem;
   cursor: pointer;
-  border-left: 1px solid #8fc098;
 }
 
 .search-btn img {
@@ -185,7 +184,7 @@
   .suggestion-details {
     font-size: 0.8rem;
   }
-  height: 24px;
+
 }
 
 .mountain-section {

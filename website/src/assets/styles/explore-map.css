@@ -1,0 +1,460 @@
+/* ===== EXISTING STYLES ===== */
+.map-page-full-container {
+  padding-top: 64px;
+}
+
+#map {
+  width: 100%;
+  height: calc(100vh - 70px);
+  min-height: 400px;
+  max-width: 100%;
+  margin: 0 auto;
+  border-radius: 0;
+  box-shadow: none;
+  border: none;
+  display: block;
+}
+
+.leaflet-top.leaflet-left {
+  z-index: 900;
+}
+
+.side-panel-container {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  gap: 18px;
+  position: absolute;
+  top: 84px;
+  left: 24px;
+  z-index: 900;
+  width: auto;
+  max-width: none;
+  height: auto;
+  margin-left: 1.5rem;
+}
+
+.side-panel-container > .gunung-highlight-card,
+.side-panel-container > .search-panel {
+  pointer-events: auto;
+}
+
+.search-panel {
+  margin: 0 auto;
+  background: rgba(247, 250, 247, 0.6);
+  border-radius: 10px;
+  box-shadow: 0 2px 16px rgba(0, 0, 0, 0.08);
+  padding: 8px 0 8px 0;
+  margin-top: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.search-panel:focus-within {
+  background: #f7faf7;
+  backdrop-filter: none;
+}
+
+.search-bar {
+  max-width: 320px;
+  background: transparent;
+  box-shadow: none;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  transition: width 0.3s cubic-bezier(0.4, 2, 0.6, 1), box-shadow 0.3s, background 0.3s;
+  overflow: hidden;
+  cursor: pointer;
+  margin: 0 10px;
+  position: relative;
+}
+
+.search-bar.expanded {
+  background: #fff;
+  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.14);
+}
+
+.search-bar .search-icon {
+  flex-shrink: 0;
+}
+
+#search-gunung {
+  border: none;
+  outline: none;
+  background: transparent;
+  font-size: 0.8em;
+  width: 0;
+  opacity: 0;
+  transition: width 0.3s, opacity 0.2s;
+}
+
+.search-bar.expanded #search-gunung {
+  width: 220px;
+  opacity: 1;
+  margin-left: 4px;
+}
+
+.search-result-list {
+  max-height: 84px;
+  overflow-y: auto;
+  margin: 6px 0 0 0;
+  padding: 0;
+  list-style: none;
+  background: #fff;
+  border-radius: 10px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+  font-size: 0.97rem;
+}
+
+.search-bar.expanded .search-result-list,
+.search-result-list.active {
+  max-height: 400px;
+  opacity: 1;
+  overflow-y: auto;
+  pointer-events: auto;
+}
+
+.search-result-list li {
+  padding: 8px 12px;
+  cursor: pointer;
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  border-bottom: 1px solid;
+}
+
+.search-result-list li:hover {
+  border-bottom: none;
+}
+
+.result-icon {
+  width: 28px;
+  height: 28px;
+  background: #eaeae8;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 2px;
+}
+
+.result-title {
+  font-weight: 500;
+  color: #222;
+}
+
+.result-sub {
+  font-size: 0.95em;
+  color: #666;
+  margin-top: 2px;
+}
+
+.gunung-highlight-card {
+  position: relative;
+  background: #fff;
+  border-radius: 18px;
+  box-shadow: 0 2px 16px rgba(0, 0, 0, 0.08);
+  padding: 24px 16px 16px 16px;
+  min-width: 280px;
+  max-width: 340px;
+  min-height: 180px;
+  max-height: 572px;
+  margin-bottom: 18px;
+  display: flex;
+  flex-direction: column;
+  transition: max-height 0.35s cubic-bezier(0.4, 0, 0.2, 1), padding 0.35s cubic-bezier(0.4, 0, 0.2, 1), opacity 0.25s;
+  opacity: 1;
+  overflow: hidden;
+}
+
+.gunung-highlight-card.minimized {
+  max-height: 47px !important;
+  min-height: 0 !important;
+  padding: 0 16px !important;
+  opacity: 0.95;
+  overflow: hidden;
+  transition: max-height 0.35s cubic-bezier(0.4, 0, 0.2, 1), padding 0.35s cubic-bezier(0.4, 0, 0.2, 1), opacity 0.25s;
+}
+
+.highlight-list {
+  overflow-y: auto;
+  padding: 0 18px;
+  flex-grow: 1;
+  flex: 1 1 auto;
+  max-height: 600px;
+  scrollbar-width: none; /* Firefox */
+  -ms-overflow-style: none; /* IE/Edge */
+}
+
+.highlight-list::-webkit-scrollbar {
+  display: none; /* Chrome/Safari */
+}
+
+.highlight-card-item {
+  background: #f8f8f8;
+  border-radius: 14px;
+  margin-bottom: 18px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+  overflow: hidden;
+  cursor: pointer;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.highlight-card-item:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.highlight-card-item:last-child {
+  margin-bottom: 0;
+}
+
+.highlight-img-wrap {
+  width: 100%;
+  aspect-ratio: 16/9;
+  background: #e0e0e0;
+  overflow: hidden;
+}
+
+.highlight-img-wrap img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.highlight-info {
+  padding: 14px 16px 12px 16px;
+}
+
+.highlight-title {
+  font-weight: bold;
+  font-size: 1.08em;
+  margin-bottom: 4px;
+}
+
+.highlight-sub {
+  color: #666;
+  font-size: 0.98em;
+  margin-bottom: 6px;
+}
+
+.highlight-meta {
+  color: #888;
+  font-size: 0.95em;
+}
+
+/* ===== NEW STYLES (Previously inline in JS) ===== */
+
+/* Custom Map Controls */
+.custom-map-controls {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-top: 16px;
+  margin-right: 1.5rem;
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  z-index: 1000;
+}
+
+.ctrl-btn {
+  background: #fff;
+  border: none;
+  border-radius: 50%;
+  width: 44px;
+  height: 44px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  margin: 0;
+  padding: 0;
+  transition: box-shadow 0.2s;
+}
+
+.ctrl-btn:active {
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.18);
+}
+
+.ctrl-btn svg {
+  pointer-events: none;
+}
+
+/* Highlight Card Header */
+.highlight-card-header-bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  margin-bottom: 12px;
+  padding: 4px 4px 8px;
+}
+
+.highlight-card-title {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: #222;
+  letter-spacing: 0.5px;
+}
+
+.highlight-min-btn {
+  background: rgba(255, 255, 255, 0.85);
+  border: none;
+  border-radius: 50%;
+  width: 36px;
+  height: 36px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.07);
+  cursor: pointer;
+  transition: background 0.2s, box-shadow 0.2s;
+  outline: none;
+}
+
+.highlight-min-btn:hover,
+.highlight-min-btn:focus {
+  background: #f5f5f5;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.13);
+}
+
+.highlight-min-btn svg {
+  pointer-events: none;
+}
+
+/* Mobile Highlight Card */
+.gunung-highlight-card-mobile {
+  display: none;
+}
+
+.highlight-card-content-mobile {
+  display: flex;
+  gap: 14px;
+  align-items: flex-start;
+  cursor: pointer;
+  padding: 8px;
+  border-radius: 12px;
+  transition: background-color 0.2s ease;
+}
+
+.highlight-card-content-mobile.touch-active {
+  background-color: #f8f9fa;
+}
+
+.highlight-card-content-mobile img {
+  width: 72px;
+  height: 72px;
+  object-fit: cover;
+  border-radius: 14px;
+  flex-shrink: 0;
+  background: #f5f5f5;
+}
+
+.highlight-title-mobile {
+  font-size: 1.1rem;
+  font-weight: 600;
+  margin-bottom: 2px;
+}
+
+.highlight-sub-mobile {
+  color: #3498db;
+  font-size: 0.97rem;
+  margin-bottom: 2px;
+}
+
+.highlight-meta-mobile {
+  color: #888;
+  font-size: 0.93rem;
+}
+
+.close-highlight-btn {
+  background: none;
+  border: none;
+  font-size: 1.5rem;
+  cursor: pointer;
+  padding: 8px;
+}
+
+/* Layer Dropdown */
+.layer-dropdown {
+  display: none;
+  position: absolute;
+  top: 100%;
+  right: 0;
+  background: #fff;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  margin-top: 8px;
+  overflow: hidden;
+  z-index: 1001;
+}
+
+.layer-dropdown.open {
+  display: block;
+}
+
+.layer-option {
+  display: block;
+  width: 100%;
+  padding: 10px 16px;
+  background: #fff;
+  border: none;
+  text-align: left;
+  cursor: pointer;
+  font-size: 0.95rem;
+  transition: background 0.2s;
+}
+
+.layer-option:hover {
+  background: #f5f5f5;
+}
+
+/* Search Exit Button */
+.search-exit-btn {
+  background: none;
+  border: none;
+  padding: 8px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: opacity 0.2s;
+}
+
+.search-exit-btn:hover {
+  opacity: 0.7;
+}
+
+/* Mobile Responsive */
+@media (max-width: 768px) {
+  .gunung-highlight-card {
+    display: none;
+  }
+
+  .gunung-highlight-card-mobile.active {
+    display: block;
+    position: fixed;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: #fff;
+    border-radius: 16px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+    padding: 12px;
+    z-index: 1000;
+    max-width: 90%;
+  }
+
+  .side-panel-container {
+    left: 12px;
+    margin-left: 0;
+  }
+
+  .custom-map-controls {
+    margin-right: 0.5rem;
+  }
+}

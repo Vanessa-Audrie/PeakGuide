@@ -55,6 +55,7 @@ class NavBar extends HTMLElement {
             <ul class="nav-links" role="menubar">
               <li role="none"><a href="/#" role="menuitem" aria-current="page">Beranda</a></li>
               <li role="none"><a href="#jelajah" role="menuitem">Jelajah</a></li>
+              <li role="none"><a href="#peta" role="menuitem">Peta</a></li>
               <li role="none"><a href="#about" role="menuitem">Tentang</a></li>
             </ul>
           </div>
