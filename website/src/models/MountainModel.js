@@ -92,6 +92,7 @@ export class MountainModel {
     return this.mountains.find((mountain) => mountain.id === parseInt(id));
   }
 
+  //Daftar Gunung
   searchMountains(query) {
     const searchTerm = query.toLowerCase();
     return this.mountains.filter(

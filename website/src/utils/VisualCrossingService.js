@@ -4,7 +4,7 @@
  */
 class VisualCrossingService {
   constructor() {
-    this.apiKey = "WCQPBLZHREA7LZ5RAX8MREF9N";
+    this.apiKey = "FDLJTBGLYK48HG88MLHMC9LFM";
     this.baseUrl =
       "https://weather.visualcrossing.com/VisualCrossingWebServices/rest/services/timeline";
   }
