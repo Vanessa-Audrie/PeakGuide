@@ -49,6 +49,7 @@ export class MapView {
       zoomControl: false,
     }).setView([-2.5, 118], 5);
 
+    //tileLayer dengan openstreetmap
     const osm = L.tileLayer(
       "https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png",
       {
